@@ -21,6 +21,7 @@
   --color-secondary-light: #fff5df;
 
   --gradient-bg: linear-gradient(#fb5905, #feb81e);
+  --gradient-bg-001: linear-gradient(#ff8f57, #f8ca69);
 
   --box-shadow: 0px 0px 1.6rem rgba(0, 0, 0, 0.1);
 }

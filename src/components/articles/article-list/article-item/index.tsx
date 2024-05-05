@@ -3,13 +3,17 @@ import { BiSolidPlaneAlt } from "react-icons/bi";
 
 import styles from "./article-item.module.css";
 import { shortifyText } from "../../../../helpers/helperfn";
-import { ArticleType } from "../../../../hooks/useGetParcels";
+import { ArticleType } from "../../../../services/apiParcels";
+import { useModal } from "../../../../hooks/useModal";
+import ArticleDetails from "../article-details";
 
 export default function ArticleItem({
   title,
   description,
   image,
 }: ArticleType) {
+  const { modal, openModal } = useModal(<ArticleDetails />);
+
   return (
     <li className={styles.item}>
       <div className={styles.image}>
@@ -17,8 +21,12 @@ export default function ArticleItem({
       </div>
       <div className={styles.details}>
         <div className={styles.head}>
-          <span className={styles.title}>{title}</span>
+          <span className={styles.title} onClick={openModal}>
+            {title}
+          </span>
           <p>{shortifyText(description)}</p>
+          {/* Open Modal */}
+          {modal}
         </div>
         <div className={styles.location}>
           <span>

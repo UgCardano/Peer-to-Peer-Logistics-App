@@ -37,6 +37,7 @@
   color: var(--color-text-800);
   font-weight: 700;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .details .location {
