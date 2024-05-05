@@ -1,0 +1,99 @@
+.article-details {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.part-1 {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.img {
+  width: 24rem;
+  height: 24rem;
+  border: 1px solid var(--color-text-100);
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+}
+.img img {
+  object-fit: contain;
+}
+
+.article-details .details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.article-details .details h3 {
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.article-details .details .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.article-details .details .wrapper p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.article-details .details .wrapper p span {
+  font-weight: 600;
+  color: var(--color-text-800);
+}
+
+.article-details .desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.article-details .desc h4 {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.article-details .desc .more {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  line-height: 2.4rem;
+}
+
+.article-details .desc .more a {
+  color: var(--color-secondary);
+}
+.article-details .desc .more a::before {
+  content: "\260D";
+  padding-right: 0.24rem;
+}
+.article-details .desc .more i {
+  color: var(--color-text-800);
+}
+
+.article-details .desc .more h5 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--color-text-800);
+  text-transform: capitalize;
+}
+
+.article-details .desc .more ul {
+  padding-left: 3.2rem;
+  font-weight: 500;
+}
+.article-details .desc .more ul li::before {
+  content: "\2794";
+  padding-right: 0.8rem;
+}
+
+.article-details button {
+  align-self: start;
+}
