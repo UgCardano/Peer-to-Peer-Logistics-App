@@ -3,10 +3,15 @@ import styles from "./header.module.css";
 import Logo from "../../ui/logo";
 import ConnectWallect from "../connect-wallet";
 import Searchbar from "../searchbar";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
+  const { pathname } = useLocation();
+
+  const isHomePage = pathname === "/";
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${!isHomePage ? styles.small : ""}`}>
       <nav className="container">
         <Logo />
         <ul>
@@ -22,7 +27,7 @@ export default function Header() {
         </ul>
         <ConnectWallect />
       </nav>
-      <Searchbar />
+      {isHomePage && <Searchbar />}
     </header>
   );
 }
