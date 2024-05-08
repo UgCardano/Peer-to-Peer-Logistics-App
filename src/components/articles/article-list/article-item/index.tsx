@@ -8,11 +8,12 @@ import { useModal } from "../../../../hooks/useModal";
 import ArticleDetails from "../article-details";
 
 export default function ArticleItem({
+  id,
   title,
   description,
   image,
 }: ArticleType) {
-  const { modal, openModal } = useModal(<ArticleDetails />);
+  const { modal, openModal } = useModal(<ArticleDetails itemId={id} />);
 
   return (
     <li className={styles.item}>
@@ -25,7 +26,6 @@ export default function ArticleItem({
             {title}
           </span>
           <p>{shortifyText(description)}</p>
-          {/* Open Modal */}
           {modal}
         </div>
         <div className={styles.location}>

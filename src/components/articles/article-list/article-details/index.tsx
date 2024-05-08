@@ -1,18 +1,22 @@
+import { useGetSingleParcel } from "../../../../hooks/useGetSingleParcel";
 import Button from "../../../../ui/button";
 import styles from "./article-details.module.css";
 
-export default function ArticleDetails() {
+export default function ArticleDetails({ itemId }: { itemId: number }) {
+  const { data, isLoading, error } = useGetSingleParcel(itemId);
+
+  if (isLoading) return <h2>Loading...</h2>;
+
+  if (!isLoading && error) return <h2>No data</h2>;
+
   return (
     <div className={styles["article-details"]}>
       <div className={styles["part-1"]}>
         <div className={styles.img}>
-          <img
-            src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
-            alt="article"
-          />
+          <img src={data?.image} alt={data?.title} />
         </div>
         <div className={styles.details}>
-          <h3>Dell Monitor 27inc.</h3>
+          <h3>{data?.title}</h3>
           <div className={styles.wrapper}>
             <p>
               Weight: <span>12kg</span>
@@ -35,7 +39,8 @@ export default function ArticleDetails() {
       <div className={styles.desc}>
         <h4>Description</h4>
         <div className={styles.more}>
-          <p>
+          {data?.description}
+          {/* <p>
             Lorem ipsum dolor sit amet consectetur. Nibh lectus velit quisque
             ornare.{" "}
             <a href="https://www.google.com" target="_blank">
@@ -68,7 +73,7 @@ export default function ArticleDetails() {
             quis sed felis interdum. <b>Vestibulum</b> non venenatis posuere id
             pellentesque in. Augue porta sit massa porttitor viverra lorem
             viverra diam. Pellentesque nulla.
-          </p>
+          </p> */}
         </div>
       </div>
       <Button>Curry Parcel</Button>
