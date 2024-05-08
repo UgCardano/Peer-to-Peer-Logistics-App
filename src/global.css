@@ -17,8 +17,10 @@
   --color-bg: #fff;
 
   --color-primary: #fb5905;
+  --color-primary-light: #fff8f5;
   --color-secondary: #feb81e;
   --color-secondary-light: #fff5df;
+  --color-error: #cf0b0b;
 
   --gradient-bg: linear-gradient(#fb5905, #feb81e);
   --gradient-bg-001: linear-gradient(#ff8f57, #f8ca69);
