@@ -1,5 +1,16 @@
+import { useModal } from "../../hooks/useModal";
 import Button from "../../ui/button";
+import Wallets from "../wallets";
 
 export default function ConnectWallect() {
-  return <Button isGradient>Connect Wallet</Button>;
+  const { modal, openModal } = useModal(<Wallets />);
+
+  return (
+    <>
+      <Button isGradient onClick={openModal}>
+        Connect Wallet
+      </Button>
+      {modal}
+    </>
+  );
 }
